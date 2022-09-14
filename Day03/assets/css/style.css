@@ -1,0 +1,8 @@
+.imagebg{
+
+    background-color: red;;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
