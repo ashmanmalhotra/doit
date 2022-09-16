@@ -1,0 +1,127 @@
+www.abc.com			Server
+							8.8.8.8
+							ashman/abc.com/
+							********/xyz.com/
+			
+c:\xampp\htdocs\abc\
+					    \xyz\
+
+http://localhost/doitc		== 		localhost/doitc
+c:\xampp\htdocs\doitc\
+								index.php				http://localhost/doitc
+								information.php		http://localhost/doitc/information.php
+
+Variable
+************
+	$num					Name of anything represents identifier.
+							e.g. num          identifies variable $num
+								  square    identifies the               function()
+	- It should not start with special character    #@!()*2        
+	- Variable can start with _ or Alphabet Letter (A-Z, a-z)
+	- You cannot prefix variable with Integer
+	- Variable can contain Number in between the identifier.  e.g  num_1, num1
+	- Name of the variable should be descriptive. e.g. 'square' is better than 'sq'
+
+	Variable names can be defined in many ways:
+			- Underscore Method:      
+						square, name, city
+						first_name, last_name
+			- Camel Casing
+						firstName, lastName
+	
+
+Data Types
+************
+1. String
+2. Integer
+3. Float
+4. Boolean
+5. Array
+6. 
+
+7. NULL
+8. Resources
+
+Important:	- You need not to define the type of the Variable in PHP.
+				- The type of the variable is determined by the Data it cotains.
+						The variable type changes as soon as the variable data is changed.
+					The concept is called "Dynamic Typing".
+String
+*******
+		$ firstName= "Rajesh";
+		$lastName  = "Khanna";
+		$cityName = "New Delhi";
+
+		echo $firstName;			=> Rajesh
+
+		Concatenation:		"Rajesh" . "Khanna"	=>		"RajeshKhanna"
+								"Rajesh" .  " " . "Khanna"	=>		"Rajesh Khanna"
+
+		Single Quotes:      'New Delhi'
+		Double Quotes:   "New Delhi"
+
+Integers
+*********
+				$names = ["Ashman", "Mohan", "Das", "Karam", "Chand", "Gandhi"];
+				$names = array("Ashman", "Mohan", "Das", "Karam", "Chand", "Gandhi");
+
+
+Constant
+*************
+*************
+The value of the constant remains consistent throughout the program.
+i.e. Their value cannot be modified
+
+		define()
+
+
+Operators
+*****************
+*****************
+1. Arithmatic Operator
+2. Assignment Operator
+3. Comparison Operator
+4. Increment and Decrement Operator
+5. Logical Operator
+6. String Operator
+7. Array Operator
+
+Arithmatic Operator
+---------------------------
+	+    -     *    /     %     ** 
+
+Assignment Operator
+----------------------------
+	=		+=		-=		*=		/=		%=		**=
+													=>		$oldvar = $oldvar ** $value
+
+					$num    			=  			   10;
+					Operand (L)		operator		operand (R).
+
+	$num = 10;
+	$num = $num + 20;		=> 10 + 20
+	$num += 20;					=> $num = $num + 20;	=> 30 + 20
+
+
+Comparison Operator
+*************************
+		Outcome => Boolean	=> True/False
+
+		>			<			>=		<=			==	   (Equals to)		!=    (Not Equals to)
+													=== (Identical)		!== (Not Identical)
+																			<>   (Not Equals to)
+Increment & Decrement Operator
+************************************
+++
+--
+		Prefix				Postfix
+	++$prefix			$postfix++
+	--$prefix				$postfix--
+
+				
+
+
+
+
+
+
