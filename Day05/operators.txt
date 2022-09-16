@@ -119,6 +119,68 @@ Increment & Decrement Operator
 	--$prefix				$postfix--
 
 				
+Logical Operator
+************************
+and	&&
+or 		||
+not	!
+				x		y		and		or		not x		xor
+			----------------------------------------------------------
+				0		0		0			0		1			0
+				0		1		0			1		1			1
+				1		0		0			1		0			1
+				1		1		1			1		0			0
+
+	(5 < 10) || (6 > 3)
+	T					T		=> T
+	
+				Marital Status:		Single			Married
+				Age:					>40				<20
+				Offer:					Couple Trip		Singleton Trip
+
+
+String Operator
+******************
+Concatenation Operator		=>		.		.=
+
+Ternary Operator
+********************
+	?:	
+
+						    Condition         T          F
+				$max = $a   >   $b   ?      $a   :   $b;
+
+
+
+/****************************
+     *  Conditional Statement
+****************************/
+// If statement
+if (condition)
+{
+	True
+}
+else
+{
+	False
+}
+
+
+/****************************
+     *  		Loops
+****************************/
+While Loop
+do while
+for Loop
+foreach
+
+
+
+
+
+
+
+
 
 
 
