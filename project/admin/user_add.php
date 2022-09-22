@@ -9,7 +9,7 @@
         $role = $_POST['role'];
         $active = $_POST['userstate'];
 
-        if(!empty($firstname) || !empty($lastname) || !empty($email) || !empty($password)){
+        if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password)){
             $query = "INSERT INTO users (firstname, lastname, email, password, role, active) VALUES ";
             $query .= "('$firstname', '$lastname', '$email', '$password', '$role', '$active')";
     
