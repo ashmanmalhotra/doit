@@ -1,3 +1,4 @@
+<?php include_once("admin/includes/dbconnection.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,12 +45,27 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <?php
+                        $query = "SELECT * FROM categories LIMIT 4;";
+                        $all_categories = mysqli_query($conn, $query);
+                        while($row = mysqli_fetch_assoc($all_categories)){
+                            $categoryname = $row['categoryname'];
+                            echo "<li><a href='#'>{$categoryname}</a></li>";
+                        }
+                    ?>
 
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">Contact</a>
                     </li>
-
-
+                    <li>
+                        <a href="#">Login</a>
+                    </li>               
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
