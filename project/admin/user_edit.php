@@ -40,6 +40,7 @@ $row = mysqli_fetch_assoc($result);
             <h1 class="h3 mb-4 text-gray-800">Create a User</h1>
 
             <form action="user_update.php" method="POST">
+                <input type="hidden" name="id" id="id" value="<?= $row['id'] ?>">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>

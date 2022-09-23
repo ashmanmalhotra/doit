@@ -1,3 +1,4 @@
+<?php include_once("includes/dbconnection.php") ?>
 <?php include_once("includes/header.php") ?>
 
     <!-- Page Wrapper -->
@@ -36,6 +37,24 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                                <?php
+                                    if(isset($_SESSION['update_operation'])){
+                                        if($_SESSION['update_operation']===true){
+                                            echo '<div class="alert alert-success" role="alert">
+                                                    User Updated Successfully!
+                                                </div>';
+                                            unset($_SESSION['update_operation']);
+                                        }
+                                        else if($_SESSION['update_operation']===false){
+                                            echo '<div class="alert alert-danger" role="alert">
+                                                    User Update Failed!
+                                                </div>';
+                                            unset($_SESSION['update_operation']);
+                                        }
+                                    }
+
+
+                                ?>
                                 <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -43,7 +62,6 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>email</th>
-                                            <th>Password</th>
                                             <th>Role</th>
                                             <th>Active</th>
                                             <th>Edit</th>
@@ -56,7 +74,6 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>email</th>
-                                            <th>Password</th>
                                             <th>Role</th>
                                             <th>Active</th>
                                             <th>Edit</th>
@@ -75,11 +92,10 @@
                                             <td><?= $row['firstname'] ?></td>
                                             <td><?= $row['lastname'] ?></td>
                                             <td><?= $row['email'] ?></td>
-                                            <td><?= $row['password'] ?></td>
                                             <td><?= $row['role'] ?></td>
                                             <td><?= $row['active'] ?></td>
-                                            <td><a href="#" class="btn btn-sm btn-warning">Edit</a></td>
-                                            <td><a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+                                            <td><a href="user_edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a></td>
+                                            <td><a href="user_delete.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a></td>
                                         </tr>
                                         <?php
                                             }
