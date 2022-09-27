@@ -1,3 +1,5 @@
+<?php include_once("admin/includes/dbconnection.php"); ?>
+
 <?php
     //username = "admin"
     //password = "1234"
@@ -5,24 +7,19 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
 
         $email = $_POST['email'];
-        $password = $_POST['password'];
-        if(empty($email) || empty($password)){
+        $password = md5($_POST['password']);
+        $query = "SELECT * FROM users where email='$email' and password='$password'";
+
+        $result = mysqli_query($conn, $query);
+
+        if($row = mysqli_fetch_assoc($result)){
+            $_SESSION['userid'] = $row['id'];
+            header("Location: admin/index.php");
+        }else{
+            $_SESSION['Failed_Login'] = "Wrong Credentials Used!!!";
             header("Location: login.php");
         }
-        else{
-            if($email==="admin@admin.com" && $password=="1234"){
-                header("Location: admin/index.php");
-            }
-            else{
-                header("Location: login.php");
-            }
-        }
-
-    }
-    else if($_SERVER['REQUEST_METHOD'] == "GET")
-    {
-        echo "Request is a GET Request";
-    }
+    } // We will check it later on
     else{
-        echo "Request Method is unknown...";
+        header("Location: login.php");
     }

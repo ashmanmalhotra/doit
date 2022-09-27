@@ -1,4 +1,6 @@
-<?php
-session_start();
+<?php 
+$num = 10;
 
-echo $_SESSION['username'];
+$num == 10? print $num : print $num;  
+ 
+?> 
