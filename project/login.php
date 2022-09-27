@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,12 +43,14 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login to the System!</h1>
                                     </div>
+                                    <?php
+                                        if(isset($_SESSION['Failed_Login'])){
+                                            echo "<div class='alert alert-danger' role='alert'>" . 
+                                                 $_SESSION['Failed_Login'] . "</div>";
 
-
-                                    <div class="alert alert-danger" role="alert">
-                                        Wrong Credentials Used!!!
-                                    </div>
-
+                                            unset($_SESSION['Failed_Login']);
+                                        }
+                                    ?>
 
                                     <form class="user" action="loginvalidate.php" method="post">
                                         <div class="form-group">
