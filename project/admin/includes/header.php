@@ -1,3 +1,10 @@
+<?php include_once('dbconnection.php') ?>
+<?php
+    if (!isset($_SESSION['userid'])) {
+        header("Location: /doitc/index.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
