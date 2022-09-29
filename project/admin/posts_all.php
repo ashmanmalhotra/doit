@@ -90,7 +90,7 @@
                                         <tr>
                                             <td><?= $row['id'] ?></td>
                                             <td><?= $row['title'] ?></td>
-                                            <td><?= "content" ?></td>
+                                            <td><?= substr($row['content'], 0, 50) ?></td>
                                             <td><?= $row['category'] ?></td>
                                             <td>
                                                 <img width="100px" src="../assets/images/<?= $row['image'] ?>" alt="">
