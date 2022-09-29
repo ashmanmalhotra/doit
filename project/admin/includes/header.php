@@ -1,4 +1,6 @@
 <?php include_once('dbconnection.php') ?>
+<?php include_once('functions.php') ?>
+
 <?php
     if (!isset($_SESSION['userid'])) {
         header("Location: /doitc/index.php");

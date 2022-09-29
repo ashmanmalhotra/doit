@@ -43,6 +43,22 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postsmanagement"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-duotone fa-book"></i>
+            <span>Posts</span>
+        </a>
+        <div id="postsmanagement" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Manage Posts:</h6>
+                <a class="collapse-item" href="posts_all.php">All Posts</a>
+                <a class="collapse-item" href="post_add.php">Create Post</a>
+                <a class="collapse-item" href="post_edit.php">Edit Post</a>
+                <a class="collapse-item" href="post_delete.php">Delete Post</a>
+            </div>
+        </div>
+    </li>    
 
 
     <!-- Nav Item - Pages Collapse Menu -->

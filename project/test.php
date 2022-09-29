@@ -8,11 +8,12 @@ if(mysqli_connect_errno()){
     echo "Database Error Encountered: " . mysqli_connect_error();
 }
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM posts where id='1';";
 $result = mysqli_query($conn, $query);
-while($row = mysqli_fetch_assoc($result)){
-    echo $row['id'] . " " . $row['firstname'] . " " . $row['lastname'] . "<br>";
-}
+$row = mysqli_fetch_assoc($result);
+
+$strtime = strtotime($row['datecreated']);
+echo date('l, Y-m-d', $strtime);
 
 
 
