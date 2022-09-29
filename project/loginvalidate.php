@@ -14,6 +14,7 @@
 
         if($row = mysqli_fetch_assoc($result)){
             $_SESSION['userid'] = $row['id'];
+            $_SESSION['userfullname'] = $row['firstname'] . " " . $row['lastname'];
             header("Location: admin/index.php");
         }else{
             $_SESSION['Failed_Login'] = "Wrong Credentials Used!!!";
