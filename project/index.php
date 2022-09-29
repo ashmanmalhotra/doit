@@ -26,7 +26,14 @@
                     by <a href="index.php"><?= $post['author'] ?></a>
                 </p>
 
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['datecreated']  ?></p>
+                <p>
+                    <span class="glyphicon glyphicon-time"></span> 
+                        Posted on 
+                        <?php 
+                            $postdate = strtotime($post['datecreated']);
+                            echo date('l, d-M-Y', $postdate);
+                        ?>
+                </p>
                 <hr>
                 <img class="img-responsive" width="200px" src="assets/images/<?= $post['image'] ?>" alt="">
                 <hr>
