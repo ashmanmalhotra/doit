@@ -6,16 +6,21 @@
         $posttitle    = $_POST['posttitle'];
         $postcontent  = $_POST['postcontent'];
         $postcategory = $_POST['postcategory'];
-        $postimage    = ""; //$_POST['postimage'];
+        $postimage    = $_FILES['postimage']['name'];
         $postauthor   = $_SESSION['userfullname'];
         $datecreated  = date("Y-m-d H:i:s");
 
         if(!empty($posttitle) && !empty($postcontent) && !empty($postcategory) && !empty($postauthor) ){
             $query  = "INSERT INTO posts (id, title, content, category, image, author, datecreated) ";
             $query .= "VALUES (NULL, '$posttitle', '$postcontent', '$postcategory', '$postimage', '$postauthor', '$datecreated');";
-    
+            
+            //echo $query;
+            //die();
+
             $result = mysqli_query($conn, $query);
             $addition_operation = true;
+
+            move_uploaded_file($_FILES['postimage']['tmp_name'], "../assets/images/$postimage");
         }
 
     }
@@ -54,7 +59,7 @@
                         echo "<div class='alert alert-success'>Post Added Successfully</div>";
                     }
                     else{
-                        echo "<div class='alert alert-danger'>Error Adding UsPoster</div>";
+                        echo "<div class='alert alert-danger'>Failed to add Post.</div>";
                     }
                 }
             ?>
